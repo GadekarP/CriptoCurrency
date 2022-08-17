@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-export default function Home({fs}) {
-  console.log(fs);
+export default function Home() {
   const navigate = useNavigate()
   const [userdata, setuserdata] = useState([])
   const [loading, setloading] = useState(false)

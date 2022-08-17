@@ -16,12 +16,16 @@ export default function Login() {
     onSubmit: values => {
       let localData = JSON.parse(localStorage.getItem('signupUser'))
       if (localData) {
-        if (localData[0].email === values.email && localData[0].password === values.password) {
-          navigate('/home')
-        }else {
+        localData.find(item => {
+          if (item.email === values.email && item.password === values.password) {
+            navigate('/home')
+          }else{
+            alert('Invalid email or password')
+          }
+        })
+      }else {
         alert('Data not found , please register first')
       }
-    }
     }
   })
   
