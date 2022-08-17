@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -18,11 +17,10 @@ export default function Login() {
       let localData = JSON.parse(localStorage.getItem('signupUser'))
       if (localData) {
         if (localData[0].email === values.email && localData[0].password === values.password) {
-          navigate('/')
+          navigate('/home')
         }else {
         alert('Data not found , please register first')
       }
-
     }
     }
   })
